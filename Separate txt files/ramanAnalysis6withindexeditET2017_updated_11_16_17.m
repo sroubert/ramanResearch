@@ -166,17 +166,27 @@ spectrum(:, 2) = spectrum(:, 2) - baseline;
 normalizer = spectrum(wn813index, 2);
     for i=1:length(spectrum(:,1))
        spectrum(i, 2) = spectrum(i, 2)/normalizer;
+       %spectrum(i, 2) = spectrum(i, 2) - pmma(i, 2);
+    end
+
+figure
+plot(spectrum(:, 1), spectrum(:,2))
+title('Spectrum divided by raw spectrum peak at 813')
+
+    for i=1:length(spectrum(:,1))
+       %spectrum(i, 2) = spectrum(i, 2)/normalizer;
        spectrum(i, 2) = spectrum(i, 2) - pmma(i, 2);
     end
 
-
-
+figure
+plot(spectrum(:, 1), spectrum(:,2))
+title('New spectrum following PMMA subtraction')   
+ 
 %5 point rubber band baselint, different functions
 
 %a=spectrum
 
-% figure()
-plot(spectrum(:, 1), spectrum(:,2))
+
 
 %normalizing to 813.2 wavenumber and subtracting pmma
 
