@@ -452,7 +452,12 @@ PO4Spectrum = spectrum(:, 2) - PO4Baseline;
 [PO4Max, PO4MaxIndex] = max(PO4Spectrum(wn980index:wn930index));
 
 PO4WaveNum = wnindex(PO4MaxIndex+wn980index);
+figure
+plot(spectrum(:,1),PO4Spectrum)
 
+%xlim([PO4x2,PO4x1]);
+
+ylim([-2.5,20])
 %figure(j)
 %plot(spectrum(:, 1), PO4Spectrum)
 
